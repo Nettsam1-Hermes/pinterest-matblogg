@@ -4,28 +4,64 @@ body {
   color: #3a2e2a;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  min-height: 100vh;
 }
 header {
   background: #f3e7d9;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1.4rem 1rem;
+  grid-area: header;
 }
 nav {
-  text-align: center;
-  padding: 1rem;
+  grid-area: sidebar;
+  position: sticky;
+  top: 0;
+  align-self: start;
   background: #fdf8f3;
-  border-bottom: 1px solid #eaddcf;
+  border-right: 1px solid #eaddcf;
+  padding: 1.5rem 1rem;
+  min-height: 100vh;
 }
 nav a {
-  margin: 0 10px;
+  display: block;
+  margin: 0.6rem 0;
   text-decoration: none;
   color: #6e4f42;
   font-weight: bold;
 }
+nav a[href="index.html"] {
+  margin-top: 0;
+}
 main {
   max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0;
+  padding: 2rem 1.5rem;
+}
+@media (max-width: 760px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main";
+  }
+  nav {
+    border-right: none;
+    border-top: 1px solid #eaddcf;
+    border-bottom: 1px solid #eaddcf;
+    min-height: auto;
+    padding: 1rem;
+  }
+  nav a {
+    display: inline-block;
+    margin: 0 10px;
+  }
 }
 .hero {
   text-align: center;
