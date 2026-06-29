@@ -23,13 +23,50 @@ nav a {
   font-weight: bold;
 }
 main {
-  max-width: 720px;
+  max-width: 960px;
   margin: 2rem auto;
   padding: 0 1rem;
+}
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+.recipe-card {
+  background: #ffffff;
+  border: 1px solid #eaddcf;
+  border-radius: 10px;
+  padding: 1rem;
+  text-decoration: none;
+  color: #3a2e2a;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.05s ease-in-out, box-shadow 0.05s ease-in-out;
+}
+.recipe-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+.recipe-card-title {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+.recipe-card-meta {
+  font-size: 0.9rem;
+  color: #7c5e52;
 }
 h2 {
   color: #5c3a2e;
 }
 ul, ol {
   line-height: 1.7;
+}
+main a {
+  color: #6e4f42;
 }
